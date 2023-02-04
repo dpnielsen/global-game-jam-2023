@@ -7,7 +7,8 @@ using UnityEngine;
 public class director : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI eggsCount;
-    private GameObject[] gos;
+    public GameObject[] gos;
+    public GameObject[] goPrefab;
     private List<GameObject> obstacles;
     public GameObject fjall;
     public GameObject mountain;
@@ -26,9 +27,13 @@ public class director : MonoBehaviour
     void spawnObstacle()
     {
         //GameObject[] gos;
-        GameObject go = Resources.Load("Prefabs/Obstacles/eggstacle", typeof(GameObject)) as GameObject;
-        go.transform.position = new Vector3(1.337f, -5.67f, -2.0f);
-        Instantiate(go);
+        //GameObject go = Resources.Load("Prefabs/Obstacles/eggstacle", typeof(GameObject)) as GameObject;
+        //go.transform.position = new Vector3(1.337f, -5.67f, -2.0f);
+        var index = Random.Range(0, goPrefab.Length);
+        var goObject = Instantiate(goPrefab[index]);
+
+        goObject.transform.position = new Vector3(1.337f, -5.67f, -2.0f);
+
         gos = GameObject.FindGameObjectsWithTag("obstacle");
         //if (obstacles.Count < 5)
         //{

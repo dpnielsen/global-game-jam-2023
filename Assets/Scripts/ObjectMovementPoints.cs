@@ -29,7 +29,10 @@ public class ObjectMovementPoints : MonoBehaviour
     void Update()
     {
         var Yoffset = new Vector3(0, Mathf.Sin(Time.time * Yspeed) * Yamplitude + Yamplitude, 0);
-        transform.position = Vector3.Lerp(startPoint.position + Yoffset, endPoint.position + Yoffset, Mathf.Sin(Time.time * speed)
+        var position = Vector3.Lerp(startPoint.position + Yoffset, endPoint.position + Yoffset, Mathf.Sin(Time.time * speed)
             * amplitude + amplitudeOffset);
+
+        position.z = transform.position.z;
+        transform.position = position;
     }
 }
