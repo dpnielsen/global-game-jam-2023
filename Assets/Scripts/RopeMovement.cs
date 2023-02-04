@@ -1,17 +1,18 @@
 using System;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 
 public class RopeMovement : MonoBehaviour
 {
-    public Transform startTransform;
-    public Transform endTransform;
+    public float speed = 10.0f;
+    public float jumpForce = 10.0f;
     
     private bool Equipped = false;
-    [SerializeField] private Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     private void Update()
@@ -22,10 +23,20 @@ public class RopeMovement : MonoBehaviour
             Equipped = true;
         }
 
+        if (Input.GetKey(KeyCode.Space))
+        {
+            
+        }
+
+        
+        
+    }
+
+    private void FixedUpdate()
+    {
         if (Equipped)
         {
-             
+            rb.velocity = new Vector2(-30f, rb.velocity.y);
         }
-        
     }
 }
