@@ -16,6 +16,8 @@ public class shop : MonoBehaviour
     public int slotsTrousers;
     public int slotsBagPack;
     public TMPro.TextMeshProUGUI eggsText;
+    public AudioSource source;
+    public AudioClip welcome;
     
     public void Start()
     {
@@ -24,6 +26,11 @@ public class shop : MonoBehaviour
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
         updateEggsText();
+        source.clip = welcome;
+        if (!source.isPlaying)
+        {
+            source.Play();
+        }
     }
 
     private void updateEggsText()

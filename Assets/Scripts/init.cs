@@ -9,5 +9,6 @@ public class init : MonoBehaviour
     {
         PlayerPrefs.SetInt("eggs", 42);
         Debug.Log("Setting eggs to 42");
+        FindObjectOfType<SoundManager>().Play("hey");
     }
 }
