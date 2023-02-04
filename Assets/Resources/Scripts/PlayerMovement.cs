@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
         //verticleMove = Input.GetAxisRaw("Verticle") * runSpeed;
-        Debug.Log("hello");
+        //Debug.Log("hello");
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("Jump occurred");

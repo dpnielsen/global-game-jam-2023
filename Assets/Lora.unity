@@ -134,9 +134,9 @@ GameObject:
   - component: {fileID: 917609294}
   - component: {fileID: 917609293}
   - component: {fileID: 917609292}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: "h\xFAs1"
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,8 +230,7 @@ Transform:
   m_LocalPosition: {x: -0.0113, y: -2.476, z: 0}
   m_LocalScale: {x: 2.1854477, y: 0.4491, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1899991217}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.063}
@@ -328,7 +327,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1899991217}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -342,13 +341,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1899991216}
-  m_LocalRotation: {x: -0, y: -0, z: 0.00054697675, w: 0.9999999}
-  m_LocalPosition: {x: 0, y: 2.55, z: 0}
-  m_LocalScale: {x: 0.45757255, y: 2.2266655, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.010047199, y: -1.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 917609294}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1902051316
 GameObject:
@@ -470,7 +469,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: -0.12984729, y: 1.1898886}
@@ -503,9 +502,9 @@ MonoBehaviour:
   m_AirControl: 1
   m_WhatIsGround:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 128
   m_GroundCheck: {fileID: 1899991217}
-  k_GroundedRadius: 0.5
+  k_GroundedRadius: 0.2
   m_Rigidbody2D: {fileID: 1902051317}
   OnLandEvent:
     m_PersistentCalls:
@@ -541,6 +540,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.2782437, y: -3.8763754}
+  m_Offset: {x: 0.2782437, y: -3.7328038}
   serializedVersion: 2
-  m_Radius: 1.4971828
+  m_Radius: 1.3536112

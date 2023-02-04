@@ -14,10 +14,11 @@ public class PlayerController : MonoBehaviour
 
 
     public float k_GroundedRadius = .02f; // Radius of the overlap circle to determine if grounded
-    private bool m_Grounded;            // Whether or not the player is grounded.
+    //private bool m_Grounded;            // Whether or not the player is grounded.
     public Rigidbody2D m_Rigidbody2D;
     private bool m_FacingRight = true;  // For determining which way the player is currently facing.
     private Vector3 m_Velocity = Vector3.zero;
+    bool isGrounded = false;
 
 
 
@@ -36,23 +37,23 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_Grounded = false;
+        //m_Grounded = false;
 
-        // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
-        // This can be done using layers instead but Sample Assets will not overwrite your project settings.
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
-        for (int i = 0; i < colliders.Length; i++)
-        {
-            if (colliders[i].gameObject != gameObject)
-            {
-                m_Grounded = true;
-                Debug.Log("<<=================>>>>>>>");
+        //// The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
+        //// This can be done using layers instead but Sample Assets will not overwrite your project settings.
+        //Collider2D[] colliders = Physics2D.OverlapCircleAll(m_GroundCheck.position, k_GroundedRadius, m_WhatIsGround);
+        //for (int i = 0; i < colliders.Length; i++)
+        //{
+        //    if (colliders[i].gameObject != gameObject)
+        //    {
+        //        m_Grounded = true;
+        //        Debug.Log("<<=================>>>>>>>");
                 
-            } else
-            {
-                m_Grounded = false;
-            }
-        }
+        //    } else
+        //    {
+        //        m_Grounded = false;
+        //    }
+        //}
     }
 
 
@@ -61,9 +62,9 @@ public class PlayerController : MonoBehaviour
 
 
         //only control the player if grounded or airControl is turned on
-        if (m_Grounded || m_AirControl)
+        //if (m_Grounded || m_AirControl)
         {
-            Debug.Log(m_Grounded + " m grounded boolean");
+            //Debug.Log(m_Grounded + " m grounded boolean");
             // Move the character by finding the target velocity
             Vector3 targetVelocity = new Vector2(move * 10f, m_Rigidbody2D.velocity.y);
             // And then smoothing it out and applying it to the character
@@ -83,14 +84,30 @@ public class PlayerController : MonoBehaviour
             }
         }
         // If the player should jump...
-        if (m_Grounded && jump)
+        if (isGrounded && jump)
         {
             Debug.Log(jump);
-            Debug.Log(m_Grounded);
+            
             Debug.Log("grounded and jump");
-            // Add a vertical force to the player.
-            m_Grounded = false;
+            // add a vertical force to the player.
+            isGrounded = false;
             m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
         }
     }
 
