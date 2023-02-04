@@ -12,8 +12,10 @@ public class click : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
         Debug.Log("yoyo");
     }
+
     public void OnMouseDown()
     {
         Debug.Log("yoyo22: " + PlayerPrefs.GetInt("eggs"));
+		
     }
 }
