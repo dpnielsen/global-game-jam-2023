@@ -15,7 +15,7 @@ public class deathscript : MonoBehaviour
         {
             SceneManager.LoadScene("intro", LoadSceneMode.Single);
         });
-        eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("score", 0);
+        eggsCount.text = "Score: " + PlayerPrefs.GetInt("score", 0);
         
     }
 }
