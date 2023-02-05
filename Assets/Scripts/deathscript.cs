@@ -13,6 +13,8 @@ public class deathscript : MonoBehaviour
     {
         reset.onClick.AddListener(() =>
         {
+            AudioListener al = FindObjectOfType<AudioListener>();
+            Destroy(al);
             SceneManager.LoadScene("intro", LoadSceneMode.Single);
         });
         eggsCount.text = "Score: " + PlayerPrefs.GetInt("score", 0);

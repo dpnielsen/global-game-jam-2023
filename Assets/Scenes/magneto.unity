@@ -738,7 +738,7 @@ MonoBehaviour:
   - name: music
     clip: {fileID: 8300000, guid: ad2421016963298aa8de6922e2386129, type: 3}
     volume: 0.531
-    loop: 0
+    loop: 1
     source: {fileID: 0}
 --- !u!4 &385115709
 Transform:
