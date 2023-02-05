@@ -9,11 +9,8 @@ public class SoundManager : MonoBehaviour
 	public Sound[] sounds;
 
 	public static SoundManager instance;
-    void Start() {
-	    //Play("Theme");
-	}
 
-    void Awake()
+    void Start()
     {
 	    if (instance == null)
 	    {
