@@ -37,6 +37,13 @@ public class Health : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter2D(Collision2D collider)
+    {
+        if (collider.otherCollider.gameObject.tag == "man")
+        {
+            Debug.Log("yoyo");
+        }
+    }
     /*public void Heal(int amount)
     {
         if (amount < 0)

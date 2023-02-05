@@ -7,6 +7,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2084728006, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2084728006, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 747517432471120666, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 747517432471120666, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.8
+      objectReference: {fileID: 0}
     - target: {fileID: 4056332342245580278, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -51,9 +67,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4057298016013625761, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057298016013625761, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4057298016013625766, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8b327e665a5e9375cb23914683e24f48, type: 3}
     - target: {fileID: 5859409247300937747, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}
       propertyPath: m_Name
-      value: BirdPrefab
+      value: BirdPrefab Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ece16798a00d5244aa60d0a2ba1a9751, type: 3}

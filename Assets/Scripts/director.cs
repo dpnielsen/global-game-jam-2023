@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
@@ -8,6 +9,8 @@ public class director : MonoBehaviour
 {
     public TMPro.TextMeshProUGUI eggsCount;
     public GameObject[] gos;
+    public GameObject[] gosEggs;
+    public GameObject[] gosRotiEggs;
     public GameObject[] goPrefab;
     private List<GameObject> obstacles;
     public GameObject fjall;
@@ -24,13 +27,40 @@ public class director : MonoBehaviour
         gos = GameObject.FindGameObjectsWithTag("obstacle");
         obstacles = new List<GameObject>();
         //InvokeRepeating("spawnItem", 5, 5);
-        InvokeRepeating("spawnObstacle", 5, 5);
+        //InvokeRepeating("spawnObstacle", 5, 5);
+        Invoke("spawnObstacle", 2);
         pe = fjall.GetComponent<PointEffector2D>();
         BoxCollider2D bc = player.GetComponent<BoxCollider2D>();
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
         soundManager = FindObjectOfType<SoundManager>();
+        eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("eggs");
+        SoundManager.instance.Play("music");
+        InvokeRepeating("cleanup", 1, 2);
     }
 
+    void cleanup()
+    {
+        Debug.Log("Cleaning...");
+        cleanupArray(gos);
+        cleanupArray(gosEggs);
+        cleanupArray(gosRotiEggs);
+    }
+    
+    void cleanupArray(GameObject[] gos)
+    {
+        for (int i = 0; i < gos.Length; i++)
+        {
+            if (gos[i].transform.position.x < -100 ||
+                gos[i].transform.position.x > 100 ||
+                gos[i].transform.position.y < -100 ||
+                gos[i].transform.position.y > 100)
+            {
+                Debug.Log("Cleaned GO with tag: " + gos[i].tag);
+                Destroy(gos[i]);
+            }
+        }
+    }
+    
     void spawnObstacle()
     {
         //GameObject[] gos;
@@ -42,6 +72,8 @@ public class director : MonoBehaviour
         goObject.transform.position = new Vector3(1.337f, -5.67f, -2.0f);
 
         gos = GameObject.FindGameObjectsWithTag("obstacle");
+        gosEggs = GameObject.FindGameObjectsWithTag("egg");
+        gosRotiEggs = GameObject.FindGameObjectsWithTag("rotiegg");
         //if (obstacles.Count < 5)
         //{
         //    //Vector3(1.33700001,-5.67000008,-2)
@@ -49,6 +81,7 @@ public class director : MonoBehaviour
         //    Instantiate(go);
         //    obstacles.Add(go);
         //}
+        Invoke("spawnObstacle", Random.Range(1.0f, 3.3f));
     }
     
     //void spawnItem()
@@ -102,6 +135,28 @@ public class director : MonoBehaviour
                 try
                 {
                     gos[i].transform.Translate(0, speed, 0);
+                }
+                catch (MissingReferenceException e)
+                {
+                    
+                }
+            }
+            for (int i = 0; i < gosEggs.Count(); i++)
+            {
+                try
+                {
+                    gosEggs[i].transform.Translate(0, speed, 0);
+                }
+                catch (MissingReferenceException e)
+                {
+                    
+                }
+            }
+            for (int i = 0; i < gosRotiEggs.Count(); i++)
+            {
+                try
+                {
+                    gosRotiEggs[i].transform.Translate(0, speed, 0);
                 }
                 catch (MissingReferenceException e)
                 {

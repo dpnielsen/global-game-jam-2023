@@ -21,13 +21,13 @@ public class shop : MonoBehaviour
     
     public void Start()
     {
-        PlayerPrefs.SetInt("eggs", 42);
-        PlayerPrefs.SetInt("max_eggs", 42);
+        //PlayerPrefs.SetInt("eggs", 42);
+        //PlayerPrefs.SetInt("max_eggs", 42);
         btnBuyTrousers.onClick.AddListener(buyTrousers);
         btnBuyBagPack.onClick.AddListener(buyBagPack);
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
-        btnStartGame.onClick.AddListener(startGame);
+        //btnStartGame.onClick.AddListener(startGame);
         //updateEggsText();
         //FindObjectOfType<SoundManager>().Play("welcome");
         //soundManager = FindObjectOfType<SoundManager>();

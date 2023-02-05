@@ -6,6 +6,10 @@ TagManager:
   tags:
   - obstacle
   - ground
+  - end
+  - egg
+  - rotiegg
+  - man
   layers:
   - Default
   - TransparentFX
