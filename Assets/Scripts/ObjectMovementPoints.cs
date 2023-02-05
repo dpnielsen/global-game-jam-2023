@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class ObjectMovementPoints : MonoBehaviour
@@ -33,6 +34,16 @@ public class ObjectMovementPoints : MonoBehaviour
             * amplitude + amplitudeOffset);
 
         position.z = transform.position.z;
+
+        Vector3 ls = transform.localScale;
+        
+        //if (transform.position.x <= 0.5f)
+        //{
+        //    ls.x *= -1;
+        //    transform.localScale = ls;
+        //}
+        
         transform.position = position;
+
     }
 }

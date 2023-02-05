@@ -10,7 +10,7 @@ public class SoundManager : MonoBehaviour
 
 	public static SoundManager instance;
     void Start() {
-	    Play("Theme");
+	    //Play("Theme");
 	}
 
     void Awake()
