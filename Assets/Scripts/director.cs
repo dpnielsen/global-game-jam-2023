@@ -132,8 +132,11 @@ public class director : MonoBehaviour
 
         if (PlayerPrefs.GetInt("eggs") < 0)
         {
-            AudioListener al = FindObjectOfType<AudioListener>();
-            Destroy(al);
+            AudioListener[] al = FindObjectsOfType<AudioListener>();
+            for (int i = 0; i < al.Length; i++)
+            {
+                Destroy(al[i]);
+            }
             SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
         }
     }

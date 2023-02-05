@@ -65,8 +65,13 @@ public class Player : MonoBehaviour
         if (collider.gameObject.tag == "outside")
         {
             Debug.Log("Die!!");
-            AudioListener al = FindObjectOfType<AudioListener>();
-            Destroy(al);
+            //AudioListener al = FindObjectOfType<AudioListener>();
+            //Destroy(al);
+            AudioListener[] al = FindObjectsOfType<AudioListener>();
+            for (int i = 0; i < al.Length; i++)
+            {
+                Destroy(al[i]);
+            }
             SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
         }
         
