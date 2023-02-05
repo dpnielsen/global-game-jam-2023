@@ -17,9 +17,9 @@ public class Player : MonoBehaviour
         cc = gameObject.GetComponent<CircleCollider2D>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("yoyoyosdpasijdsadæfjsedælfkm");
+        PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
     }
 
     void OnCollisionEnter2D(Collision2D collider)
