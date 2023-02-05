@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private CircleCollider2D cc;
     public float timeHitInterval;
     private bool canBeHit;
+    private bool tempInvulnerability;
 
     void Start()
     {
@@ -19,6 +20,20 @@ public class Player : MonoBehaviour
         Debug.Log("yoyoyo");
         cc = gameObject.GetComponent<CircleCollider2D>();
         InvokeRepeating("canBeHitClear", 1, timeHitInterval);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            tempInvulnerability = true;
+            Invoke("clearInvulnerability", 0.2f);
+        }
+    }
+
+    void clearInvulnerability()
+    {
+        tempInvulnerability = false;
     }
 
     void canBeHitClear()
@@ -33,7 +48,7 @@ public class Player : MonoBehaviour
         Debug.Log("Tag: " + other.tag);
         if (other.gameObject.tag == "obstacle")
         {
-            if (canBeHit)
+            if (canBeHit && !tempInvulnerability)
             {
                 PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
                 canBeHit = false;
@@ -50,6 +65,8 @@ public class Player : MonoBehaviour
         if (collider.gameObject.tag == "outside")
         {
             Debug.Log("Die!!");
+            AudioListener al = FindObjectOfType<AudioListener>();
+            Destroy(al);
             SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
         }
         
