@@ -7,9 +7,9 @@ public class init : MonoBehaviour
 {
     public void Start()
     {
-        PlayerPrefs.SetInt("eggs", 42);
-        PlayerPrefs.SetInt("max_eggs", 42);
-        Debug.Log("Setting eggs to 42");
+        //PlayerPrefs.SetInt("eggs", 42);
+        //PlayerPrefs.SetInt("max_eggs", 42);
+        //Debug.Log("Setting eggs to 42");
         //FindObjectOfType<SoundManager>().Play("hey");
     }
 }

@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 437513180}
   - component: {fileID: 437513179}
   - component: {fileID: 437513182}
+  - component: {fileID: 437513183}
   m_Layer: 5
   m_Name: button_start
   m_TagString: Untagged
@@ -234,6 +235,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 8, y: 1.6}
   m_EdgeRadius: 0
+--- !u!114 &437513183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437513177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed97abe871a0ca5668abb29813599e14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: shop
 --- !u!1 &1173543010
 GameObject:
   m_ObjectHideFlags: 0
