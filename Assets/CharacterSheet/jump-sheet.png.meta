@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c7b8c90095e8dd44982d1d6f04118abd
+guid: f3d484faa8e82ca4a9188b36ee413e56
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -105,13 +105,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: stage1-Sheet_0
+      name: jump-sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 696
-        height: 354
+        width: 540
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -119,20 +119,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 954a081d1380aac4e8688ff45ffc5c0a
-      internalID: 1091110615
+      spriteID: e69226a18b7783746a442f03479ecf7b
+      internalID: -1137358268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stage1-Sheet_1
+      name: jump-sheet_1
       rect:
         serializedVersion: 2
-        x: 696
+        x: 540
         y: 0
-        width: 696
-        height: 354
+        width: 540
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,20 +140,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb90c4736a3e8564691559988d502a28
-      internalID: -999253946
+      spriteID: e01f7a35474f4bb479dbe6ea6f173695
+      internalID: 1370096543
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: stage1-Sheet_2
+      name: jump-sheet_2
       rect:
         serializedVersion: 2
-        x: 1392
+        x: 1080
         y: 0
-        width: 696
-        height: 354
+        width: 540
+        height: 397
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,29 +161,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67ea847b8edc29248a720d3cc720cead
-      internalID: 873676866
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: stage1-Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 2088
-        y: 0
-        width: 696
-        height: 354
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 968423562ddcd8e47ac64a3c2ddf1917
-      internalID: -1556658018
+      spriteID: 90713bb994ac3154484a2f75920480b1
+      internalID: -1910701759
       vertices: []
       indices: 
       edges: []
@@ -199,10 +178,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      stage1-Sheet_1: -999253946
-      stage1-Sheet_3: -1556658018
-      stage1-Sheet_2: 873676866
-      stage1-Sheet_0: 1091110615
+      jump-sheet_2: -1910701759
+      jump-sheet_0: -1137358268
+      jump-sheet_1: 1370096543
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

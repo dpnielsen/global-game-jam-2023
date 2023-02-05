@@ -14,6 +14,8 @@ public class director : MonoBehaviour
     public GameObject mountain;
     public GameObject player;
     private PointEffector2D pe;
+    public Animator animator;
+    //private bool isGrounded;
     
     void Start()
     {
@@ -24,6 +26,7 @@ public class director : MonoBehaviour
         pe = fjall.GetComponent<PointEffector2D>();
         BoxCollider2D bc = player.GetComponent<BoxCollider2D>();
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+
     }
 
     void spawnObstacle()
@@ -73,11 +76,14 @@ public class director : MonoBehaviour
         {
             eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("eggs");
             pe.forceMagnitude = 15;
+            animator.SetFloat("Speed", Mathf.Abs(pe.forceMagnitude));
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             pe.forceMagnitude = -25;
+            
+
         }
 
     }
@@ -92,6 +98,31 @@ public class director : MonoBehaviour
             {
                 gos[i].transform.Translate(0, 0.01f, 0);
             }
-        }
+        } 
+
+        //if (!isGrounded)
+        //{
+        //    Debug.Log("Not grounded");
+            
+        //}
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("ground"))
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("ground"))
+    //    {
+    //        isGrounded = false;
+    //    }
+    //}
+
+
+
 }
