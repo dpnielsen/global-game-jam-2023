@@ -1,6 +1,7 @@
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Unity.VisualScripting;
 using UnityEngine.SceneManagement;
 using UnityEngine;
@@ -19,8 +20,10 @@ public class director : MonoBehaviour
     private PointEffector2D pe;
     public float speed;
     public int interval;
+    public float speedIncrease;
     private SoundManager soundManager;
     public Animator animator;
+    public GameObject end;
 
     void Start()
     {
@@ -36,11 +39,17 @@ public class director : MonoBehaviour
         eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("eggs");
         SoundManager.instance.Play("music");
         InvokeRepeating("cleanup", 1, 2);
+        InvokeRepeating("increaseSpeed", interval, interval);
     }
 
+    void increaseSpeed()
+    {
+        speed += speedIncrease;
+    }
+    
     void cleanup()
     {
-        Debug.Log("Cleaning...");
+        //Debug.Log("Cleaning...");
         cleanupArray(gos);
         cleanupArray(gosEggs);
         cleanupArray(gosRotiEggs);
@@ -55,7 +64,7 @@ public class director : MonoBehaviour
                 gos[i].transform.position.y < -100 ||
                 gos[i].transform.position.y > 100)
             {
-                Debug.Log("Cleaned GO with tag: " + gos[i].tag);
+                //Debug.Log("Cleaned GO with tag: " + gos[i].tag);
                 Destroy(gos[i]);
             }
         }
@@ -129,6 +138,20 @@ public class director : MonoBehaviour
         if (!fjall.GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()))
         {
             mountain.transform.Translate(0, speed, 0);
+            end.transform.Translate(0, speed, 0);
+
+            if (mountain.transform.position.y > 50)
+            {
+                mountain.transform.position = new Vector3(4, -55, 0);
+            }
+            //Vector3(4,-59,0) 
+            //if (RandomNumberGenerator.)
+            //if (end.transform.position.y > -2)
+            //{
+            //    //Debug.Log("asdasihfddasoihfsdpifh");
+            //    // End position: 4.47, -120, -2
+            //    end.transform.position = new Vector3(4.47f, -120, -2);
+            //}
 
             for (int i = 0; i < gos.Count(); i++)
             {

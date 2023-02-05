@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
@@ -15,6 +16,12 @@ public class Player : MonoBehaviour
         Debug.Log("yoyoyo");
         cc = gameObject.GetComponent<CircleCollider2D>();
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("yoyoyosdpasijdsadæfjsedælfkm");
+    }
+
     void OnCollisionEnter2D(Collision2D collider)
     {
         //Debug.Log("collision: " + collider.gameObject.name);
@@ -49,15 +56,16 @@ public class Player : MonoBehaviour
 
         if (collider.gameObject.tag == "end")
         {
-            if (PlayerPrefs.GetInt("fartpack") > 0)
-            {
-                gameObject.GetComponent<PointEffector2D>().enabled = false;
-                for (int i = 0; i < 1000; i++)
-                {
-                    gameObject.transform.Translate(0, 0.1f, 0);
-                }
-            }
-            SceneManager.LoadScene("shop", LoadSceneMode.Single);
+            Debug.Log("--------------------------------");
+            //if (PlayerPrefs.GetInt("fartpack") > 0)
+            //{
+            //    gameObject.GetComponent<PointEffector2D>().enabled = false;
+            //    for (int i = 0; i < 1000; i++)
+            //    {
+            //        gameObject.transform.Translate(0, 0.1f, 0);
+            //    }
+            //}
+            //SceneManager.LoadScene("shop", LoadSceneMode.Single);
         }
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6504838127266518344}
   - component: {fileID: 6504838127266518345}
   - component: {fileID: 6504838127266518346}
+  - component: {fileID: 2023277661382901908}
   m_Layer: 0
   m_Name: lundi
   m_TagString: Untagged
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.65, y: 1.69}
   m_EdgeRadius: 0
+--- !u!114 &2023277661382901908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6504838127266518347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01b7cbcff0b8a4f6cb881d5eb4b5028b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 1
