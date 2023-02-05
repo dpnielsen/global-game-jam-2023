@@ -415,6 +415,85 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e67024f2e569f14da9a91bb0368930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &385115707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385115709}
+  - component: {fileID: 385115708}
+  - component: {fileID: 385115710}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &385115708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385115707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71a167e8980e45018b84d35867b99491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: hit
+    clip: {fileID: 8300000, guid: 71423f2b31c26f56ea4ef27ecb0bc0bb, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: likka
+    clip: {fileID: 8300000, guid: b077ed7da6f7a1682b48fae2d3c209bf, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: ldoyr
+    clip: {fileID: 8300000, guid: b6a72dfd4dfa66a8eb628b8d0180332a, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: egg
+    clip: {fileID: 8300000, guid: 86e3472a053b3fec3b9e5fc876d09d66, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: lora
+    clip: {fileID: 8300000, guid: f1f3e7eeb0539d158966f48498496027, type: 3}
+    volume: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &385115709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385115707}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.5346856, y: 0.23594172, z: -1.4170426}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &385115710
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385115707}
+  m_Enabled: 1
 --- !u!1 &793322077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,7 +1252,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1880756962}
   - component: {fileID: 1880756961}
-  - component: {fileID: 1880756960}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1181,14 +1259,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1880756960
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1880756959}
-  m_Enabled: 1
 --- !u!20 &1880756961
 Camera:
   m_ObjectHideFlags: 0

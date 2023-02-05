@@ -76,6 +76,7 @@ public class director : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("eggs");
+            SoundManager.instance.Play("lora");
             pe.forceMagnitude = 15;
         }
 

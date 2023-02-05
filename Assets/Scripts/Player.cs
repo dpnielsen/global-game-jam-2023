@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
         {
             PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") + 1);
             Destroy(collider.gameObject);
+            SoundManager.instance.Play("egg");
         }   
     }
 }
