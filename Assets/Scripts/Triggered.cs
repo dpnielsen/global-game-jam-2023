@@ -16,8 +16,8 @@ public class Triggered : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider collider)
-    {
-        Debug.Log("yoyoyoyoasdasdasds");
-    }
+    //void OnTriggerEnter(Collider collider)
+    //{
+    //    Debug.Log("yoyoyoyoasdasdasds");
+    //}
 }

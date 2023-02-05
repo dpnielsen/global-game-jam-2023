@@ -10,6 +10,7 @@ TagManager:
   - egg
   - rotiegg
   - man
+  - outside
   layers:
   - Default
   - TransparentFX

@@ -46,6 +46,11 @@ public class Player : MonoBehaviour
         //Debug.Log("collision: " + collider.gameObject.name);
         Debug.Log("collision: " + collider.gameObject.name);
         animator.SetFloat("Speed", 0);
+
+        if (collider.gameObject.tag == "outside")
+        {
+            Debug.Log("Die!!");
+        }
         
         if (collider.gameObject.tag == "egg")
         {
