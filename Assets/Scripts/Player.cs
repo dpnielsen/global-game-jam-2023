@@ -10,16 +10,30 @@ public class Player : MonoBehaviour
 
     public Animator animator;
     private CircleCollider2D cc;
+    private bool canBeHit;
 
     void Start()
     {
+        canBeHit = true;
         Debug.Log("yoyoyo");
         cc = gameObject.GetComponent<CircleCollider2D>();
+        InvokeRepeating("canBeHitClear", 1, 0.5f);
+    }
+
+    void canBeHitClear()
+    {
+        canBeHit = true;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
+        Debug.Log("Tag: " + other.gameObject.tag);
+        Debug.Log("Tag: " + other.gameObject.gameObject.tag);
+        Debug.Log("Tag: " + other.tag);
+        if (other.gameObject.tag == "obstacle")
+        {
+            PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collider)
