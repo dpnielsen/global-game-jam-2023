@@ -59,6 +59,9 @@ public class Health : MonoBehaviour
     private void Die()
     {
         Debug.Log("I am Dead!");
-        Destroy(gameObject);
+        SoundManager.instance.Play("ldoyr");
+        gameObject.GetComponent<ObjectMovementPoints>().enabled = false;
+        gameObject.GetComponent<DieBird>().enabled = true;
+        //Destroy(gameObject);
     }
 }

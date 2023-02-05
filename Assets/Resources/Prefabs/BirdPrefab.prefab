@@ -46,7 +46,8 @@ GameObject:
   - component: {fileID: 1668654508424163465}
   - component: {fileID: 2084728006}
   - component: {fileID: 2084728005}
-  m_Layer: 0
+  - component: {fileID: 5825123696457771748}
+  m_Layer: 14
   m_Name: lundi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -218,6 +219,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+--- !u!114 &5825123696457771748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4057298016013625764}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0209f72c70f744499e9cc684d854accb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4057298017629057578
 GameObject:
   m_ObjectHideFlags: 0

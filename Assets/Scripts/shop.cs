@@ -10,6 +10,7 @@ public class shop : MonoBehaviour
     public Button btnBuyFartPack;
     public Button btnBuyBagPack;
     public Button btnFreeEggs;
+    public Button btnStartGame;
     public int priceTrousers;
     public int priceFartPack;
     public int priceBagPack;
@@ -26,6 +27,7 @@ public class shop : MonoBehaviour
         btnBuyBagPack.onClick.AddListener(buyBagPack);
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
+        btnStartGame.onClick.AddListener(startGame);
         //updateEggsText();
         //FindObjectOfType<SoundManager>().Play("welcome");
         //soundManager = FindObjectOfType<SoundManager>();
@@ -89,5 +91,13 @@ public class shop : MonoBehaviour
             eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
             //updateEggsText();
         }
+    }
+
+    public void startGame()
+    {
+        Debug.Log("yoyo");
+        AudioListener al = FindObjectOfType<AudioListener>();
+        Destroy(al);
+        SceneManager.LoadScene("magneto", LoadSceneMode.Single);
     }
 }

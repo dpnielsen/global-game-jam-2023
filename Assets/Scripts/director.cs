@@ -17,8 +17,9 @@ public class director : MonoBehaviour
     public float speed;
     public int interval;
     private SoundManager soundManager;
+    public Animator animator;
 
-        void Start()
+    void Start()
     {
         gos = GameObject.FindGameObjectsWithTag("obstacle");
         obstacles = new List<GameObject>();
@@ -78,11 +79,14 @@ public class director : MonoBehaviour
             eggsCount.text = "Eggs: " + PlayerPrefs.GetInt("eggs");
             SoundManager.instance.Play("lora");
             pe.forceMagnitude = 15;
+            animator.SetFloat("Speed", Mathf.Abs(pe.forceMagnitude));
         }
 
         if (Input.GetKeyUp(KeyCode.Space))
         {
             pe.forceMagnitude = -25;
+            
+
         }
 
     }
@@ -104,6 +108,31 @@ public class director : MonoBehaviour
                     
                 }
             }
-        }
+        } 
+
+        //if (!isGrounded)
+        //{
+        //    Debug.Log("Not grounded");
+            
+        //}
     }
+
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("ground"))
+    //    {
+    //        isGrounded = true;
+    //    }
+    //}
+
+    //private void OnCollisionExit2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.CompareTag("ground"))
+    //    {
+    //        isGrounded = false;
+    //    }
+    //}
+
+
+
 }
