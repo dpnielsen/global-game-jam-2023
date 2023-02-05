@@ -24,6 +24,7 @@ public class shop : MonoBehaviour
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
         updateEggsText();
+        FindObjectOfType<SoundManager>().Play("welcome");
     }
 
     private void updateEggsText()
@@ -33,8 +34,8 @@ public class shop : MonoBehaviour
     
     public void FixedUpdate()
     {
-        Debug.Log("Eggs: " + PlayerPrefs.GetInt("eggs"));
-        updateEggsText();
+        //Debug.Log("Eggs: " + PlayerPrefs.GetInt("eggs"));
+        //updateEggsText();
     }
 
     public void freeEggs()
@@ -51,6 +52,8 @@ public class shop : MonoBehaviour
         {
             PlayerPrefs.SetInt("eggs", eggs - priceTrousers);
             PlayerPrefs.SetInt("max_eggs", maxEggs + slotsTrousers);
+            updateEggsText();
+            FindObjectOfType<SoundManager>().Play("welcome");
         }
     }
     
@@ -63,6 +66,7 @@ public class shop : MonoBehaviour
         {
             PlayerPrefs.SetInt("eggs", eggs - priceBagPack);
             PlayerPrefs.SetInt("max_eggs", maxEggs + slotsBagPack);
+            updateEggsText();
         }
     }
 
@@ -74,6 +78,7 @@ public class shop : MonoBehaviour
         if (eggs >= priceFartPack)
         {
             PlayerPrefs.SetInt("eggs", eggs - priceFartPack);
+            updateEggsText();
         }
     }
 }

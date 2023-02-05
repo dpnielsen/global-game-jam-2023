@@ -267,6 +267,8 @@ MonoBehaviour:
   slotsTrousers: 2
   slotsBagPack: 5
   eggsText: {fileID: 0}
+  source: {fileID: 0}
+  welcome: {fileID: 0}
 --- !u!1 &326175527
 GameObject:
   m_ObjectHideFlags: 0
@@ -769,6 +771,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1025684621}
   - component: {fileID: 1025684622}
+  - component: {fileID: 1025684623}
   m_Layer: 0
   m_Name: shop
   m_TagString: Untagged
@@ -813,6 +816,16 @@ MonoBehaviour:
   slotsTrousers: 0
   slotsBagPack: 0
   eggsText: {fileID: 1295247845}
+  source: {fileID: 0}
+  welcome: {fileID: 8300000, guid: 9b3c3d934025b76bab7ddfca97bfd150, type: 3}
+--- !u!81 &1025684623
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1025684619}
+  m_Enabled: 0
 --- !u!1 &1295247843
 GameObject:
   m_ObjectHideFlags: 0
@@ -958,7 +971,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1634898130}
   - component: {fileID: 1634898129}
-  - component: {fileID: 1634898128}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -966,14 +978,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &1634898128
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1634898127}
-  m_Enabled: 1
 --- !u!20 &1634898129
 Camera:
   m_ObjectHideFlags: 0

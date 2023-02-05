@@ -12,6 +12,7 @@ public class AttackArea : MonoBehaviour
         {
             Health health = collider.GetComponent<Health>();
             health.Damage(hit);
+            FindObjectOfType<SoundManager>().Play("hit");
         }
         
     }
