@@ -16,6 +16,7 @@ public class shop : MonoBehaviour
     public int slotsTrousers;
     public int slotsBagPack;
     public TMPro.TextMeshProUGUI eggsText;
+    //private SoundManager soundManager;
     
     public void Start()
     {
@@ -24,7 +25,8 @@ public class shop : MonoBehaviour
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
         updateEggsText();
-        FindObjectOfType<SoundManager>().Play("welcome");
+        //FindObjectOfType<SoundManager>().Play("welcome");
+        //soundManager = FindObjectOfType<SoundManager>();
     }
 
     private void updateEggsText()
@@ -50,10 +52,11 @@ public class shop : MonoBehaviour
         
         if (eggs >= priceTrousers)
         {
+            Debug.Log("hey");
             PlayerPrefs.SetInt("eggs", eggs - priceTrousers);
             PlayerPrefs.SetInt("max_eggs", maxEggs + slotsTrousers);
             updateEggsText();
-            FindObjectOfType<SoundManager>().Play("welcome");
+            SoundManager.instance.Play("Theme");
         }
     }
     

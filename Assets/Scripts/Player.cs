@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collider)
     {
-        Debug.Log("collision: " + collider.gameObject.name);
+        //Debug.Log("collision: " + collider.gameObject.name);
         if (collider.gameObject.tag == "obstacle")
         {
             PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") + 1);

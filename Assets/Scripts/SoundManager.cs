@@ -42,11 +42,11 @@ public class SoundManager : MonoBehaviour
     {
 	    Sound s = Array.Find(sounds, sound => sound.name == name);
 
-	    if (s == null)
-	    {
-		    Debug.Log("Sound file not found: " + name);
-		    return;
-	    }
+	    //if (s == null)
+	    //{
+		//    Debug.Log("Sound file not found: " + name);
+		//    return;
+	    //}
 	    
 	    s.source.Play();
     }

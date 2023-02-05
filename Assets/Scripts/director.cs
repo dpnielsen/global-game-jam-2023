@@ -14,8 +14,11 @@ public class director : MonoBehaviour
     public GameObject mountain;
     public GameObject player;
     private PointEffector2D pe;
-    
-    void Start()
+    public float speed;
+    public int interval;
+    private SoundManager soundManager;
+
+        void Start()
     {
         gos = GameObject.FindGameObjectsWithTag("obstacle");
         obstacles = new List<GameObject>();
@@ -24,6 +27,7 @@ public class director : MonoBehaviour
         pe = fjall.GetComponent<PointEffector2D>();
         BoxCollider2D bc = player.GetComponent<BoxCollider2D>();
         Rigidbody2D rb = player.GetComponent<Rigidbody2D>();
+        soundManager = FindObjectOfType<SoundManager>();
     }
 
     void spawnObstacle()
@@ -86,11 +90,18 @@ public class director : MonoBehaviour
     {
         if (!fjall.GetComponent<BoxCollider2D>().IsTouching(player.GetComponent<BoxCollider2D>()))
         {
-            mountain.transform.Translate(0, 0.01f, 0);
+            mountain.transform.Translate(0, speed, 0);
 
             for (int i = 0; i < gos.Count(); i++)
             {
-                gos[i].transform.Translate(0, 0.01f, 0);
+                try
+                {
+                    gos[i].transform.Translate(0, speed, 0);
+                }
+                catch (MissingReferenceException e)
+                {
+                    
+                }
             }
         }
     }

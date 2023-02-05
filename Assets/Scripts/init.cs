@@ -10,6 +10,6 @@ public class init : MonoBehaviour
         PlayerPrefs.SetInt("eggs", 42);
         PlayerPrefs.SetInt("max_eggs", 42);
         Debug.Log("Setting eggs to 42");
-        FindObjectOfType<SoundManager>().Play("hey");
+        //FindObjectOfType<SoundManager>().Play("hey");
     }
 }
