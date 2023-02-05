@@ -50,11 +50,13 @@ public class Player : MonoBehaviour
         if (collider.gameObject.tag == "outside")
         {
             Debug.Log("Die!!");
+            SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
         }
         
         if (collider.gameObject.tag == "egg")
         {
             PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") + 1);
+            PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("score") + 1);
             Destroy(collider.gameObject);
             SoundManager.instance.Play("egg");
         }
@@ -62,6 +64,7 @@ public class Player : MonoBehaviour
         if (collider.gameObject.tag == "rotiegg")
         {
             PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") + 1);
+            PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("score") + 1);
             Destroy(collider.gameObject);
             SoundManager.instance.Play("fart");
         }

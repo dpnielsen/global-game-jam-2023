@@ -90,7 +90,8 @@ public class director : MonoBehaviour
         //    Instantiate(go);
         //    obstacles.Add(go);
         //}
-        Invoke("spawnObstacle", Random.Range(1.0f, 3.3f));
+        
+        Invoke("spawnObstacle", Random.Range(0.3f, 1.5f - speed));
     }
     
     //void spawnItem()
@@ -127,10 +128,12 @@ public class director : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Space))
         {
             pe.forceMagnitude = -25;
-            
-
         }
 
+        if (PlayerPrefs.GetInt("eggs") < 0)
+        {
+            SceneManager.LoadScene("DeathScene", LoadSceneMode.Single);
+        }
     }
 
     private void FixedUpdate()
