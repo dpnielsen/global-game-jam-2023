@@ -210,12 +210,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 4
-  m_Sprite: {fileID: 21300000, guid: ea7271d641526cc37b246d520c2e1b7c, type: 3}
+  m_Sprite: {fileID: 1091110615, guid: c7b8c90095e8dd44982d1d6f04118abd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 6.93, y: 3.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -229,8 +229,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 88545812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.348, y: 0.16, z: -2}
+<<<<<<< HEAD
+  m_LocalPosition: {x: 1.91, y: 0.16, z: -2}
   m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+=======
+  m_LocalPosition: {x: 2.484, y: 0.081, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+>>>>>>> e8f5117d4b08f16c45150119019a0d88a335b894
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1589018083}
@@ -250,18 +255,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.06474733, y: -0.06474757}
+  m_Offset: {x: -5.1122556, y: 0.1829462}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 9.86, y: 9.26}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 21.784615, y: 11.0625}
+    newSize: {x: 6.93, y: 3.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 9.93515, y: 9.158182}
+  m_Size: {x: 11.943622, y: 10.688812}
   m_EdgeRadius: 0
 --- !u!58 &88545817
 CircleCollider2D:
@@ -417,33 +422,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e67024f2e569f14da9a91bb0368930d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
+--- !u!1 &385115707
+GameObject:
+=======
   animator: {fileID: 88545822}
 --- !u!95 &88545822
 Animator:
   serializedVersion: 5
+>>>>>>> e8f5117d4b08f16c45150119019a0d88a335b894
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 88545812}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f3ef3cf06ea410547be125fd22154d45, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
---- !u!1 &385115707
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   serializedVersion: 6
   m_Component:
   - component: {fileID: 385115709}
@@ -517,6 +509,21 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 385115707}
   m_Enabled: 1
+=======
+  m_GameObject: {fileID: 88545812}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f3ef3cf06ea410547be125fd22154d45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+>>>>>>> e8f5117d4b08f16c45150119019a0d88a335b894
 --- !u!1 &793322077
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,9 +855,12 @@ MonoBehaviour:
   fjall: {fileID: 1963185063}
   mountain: {fileID: 1667104399}
   player: {fileID: 88545812}
+<<<<<<< HEAD
   speed: 0.05
   interval: 5
+=======
   animator: {fileID: 88545822}
+>>>>>>> e8f5117d4b08f16c45150119019a0d88a335b894
 --- !u!1 &1427461774
 GameObject:
   m_ObjectHideFlags: 0
@@ -915,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1589018083
 Transform:
   m_ObjectHideFlags: 0
@@ -968,9 +978,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 5.313629, y: -0.56795573}
-      - {x: 15.895184, y: -8.47838}
-      - {x: 16.002544, y: 6.639188}
+    - - {x: 1.0376267, y: -0.34290296}
+      - {x: 5.992863, y: -2.7170303}
+      - {x: 5.9651904, y: 3.0383437}
 --- !u!1 &1667104399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,7 +1467,7 @@ GameObject:
   - component: {fileID: 1963185067}
   m_Layer: 8
   m_Name: fjall
-  m_TagString: Untagged
+  m_TagString: ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1542,7 +1552,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1963185063}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.016, y: -0.013, z: 1}
+  m_LocalPosition: {x: 0.81, y: 0, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

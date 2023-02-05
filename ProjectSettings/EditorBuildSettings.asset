@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/shop.unity
     guid: b4228853229262d8f98d7b76377cb07c
+  - enabled: 1
+    path: Assets/Scenes/magneto.unity
+    guid: 26813bd3348afe3d9853f7ef2d3ac871
   m_configObjects: {}

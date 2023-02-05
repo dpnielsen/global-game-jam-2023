@@ -9,8 +9,10 @@ public class click : MonoBehaviour
 
     public void OnMouseUp()
     {
-        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
+        AudioListener al = FindObjectOfType<AudioListener>();
+        Destroy(al);
         Debug.Log("yoyo");
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
 
     public void OnMouseDown()

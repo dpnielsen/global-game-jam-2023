@@ -10,36 +10,44 @@ public class shop : MonoBehaviour
     public Button btnBuyFartPack;
     public Button btnBuyBagPack;
     public Button btnFreeEggs;
+    public Button btnStartGame;
     public int priceTrousers;
     public int priceFartPack;
     public int priceBagPack;
     public int slotsTrousers;
     public int slotsBagPack;
     public TMPro.TextMeshProUGUI eggsText;
+    //private SoundManager soundManager;
     
     public void Start()
     {
+        PlayerPrefs.SetInt("eggs", 42);
+        PlayerPrefs.SetInt("max_eggs", 42);
         btnBuyTrousers.onClick.AddListener(buyTrousers);
         btnBuyBagPack.onClick.AddListener(buyBagPack);
         btnBuyFartPack.onClick.AddListener(buyFartPack);
         btnFreeEggs.onClick.AddListener(freeEggs);
-        updateEggsText();
+        btnStartGame.onClick.AddListener(startGame);
+        //updateEggsText();
+        //FindObjectOfType<SoundManager>().Play("welcome");
+        //soundManager = FindObjectOfType<SoundManager>();
     }
 
-    private void updateEggsText()
-    {
-        eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
-    }
+    //private void updateEggsText()
+    //{
+    //    eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
+    //}
     
     public void FixedUpdate()
     {
-        Debug.Log("Eggs: " + PlayerPrefs.GetInt("eggs"));
-        updateEggsText();
+        //Debug.Log("Eggs: " + PlayerPrefs.GetInt("eggs"));
+        //updateEggsText();
     }
 
     public void freeEggs()
     {
-        PlayerPrefs.SetInt("eggs", 100);
+        PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("max_eggs"));
+        eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
     }
 
     public void buyTrousers()
@@ -49,8 +57,12 @@ public class shop : MonoBehaviour
         
         if (eggs >= priceTrousers)
         {
+            Debug.Log("hey");
             PlayerPrefs.SetInt("eggs", eggs - priceTrousers);
             PlayerPrefs.SetInt("max_eggs", maxEggs + slotsTrousers);
+            //updateEggsText();
+            eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
+            SoundManager.instance.Play("Theme");
         }
     }
     
@@ -63,6 +75,8 @@ public class shop : MonoBehaviour
         {
             PlayerPrefs.SetInt("eggs", eggs - priceBagPack);
             PlayerPrefs.SetInt("max_eggs", maxEggs + slotsBagPack);
+            eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
+            //updateEggsText();
         }
     }
 
@@ -74,6 +88,16 @@ public class shop : MonoBehaviour
         if (eggs >= priceFartPack)
         {
             PlayerPrefs.SetInt("eggs", eggs - priceFartPack);
+            eggsText.text = "Eggs: " + PlayerPrefs.GetInt("eggs") + " / " + PlayerPrefs.GetInt("max_eggs");
+            //updateEggsText();
         }
+    }
+
+    public void startGame()
+    {
+        Debug.Log("yoyo");
+        AudioListener al = FindObjectOfType<AudioListener>();
+        Destroy(al);
+        SceneManager.LoadScene("magneto", LoadSceneMode.Single);
     }
 }
