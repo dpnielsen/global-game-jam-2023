@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
 
     public Animator animator;
     private CircleCollider2D cc;
+    public float timeHitInterval;
     private bool canBeHit;
 
     void Start()
@@ -17,7 +18,7 @@ public class Player : MonoBehaviour
         canBeHit = true;
         Debug.Log("yoyoyo");
         cc = gameObject.GetComponent<CircleCollider2D>();
-        InvokeRepeating("canBeHitClear", 1, 0.5f);
+        InvokeRepeating("canBeHitClear", 1, timeHitInterval);
     }
 
     void canBeHitClear()
@@ -32,7 +33,11 @@ public class Player : MonoBehaviour
         Debug.Log("Tag: " + other.tag);
         if (other.gameObject.tag == "obstacle")
         {
-            PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
+            if (canBeHit)
+            {
+                PlayerPrefs.SetInt("eggs", PlayerPrefs.GetInt("eggs") - 1);
+                canBeHit = false;
+            }
         }
     }
 
